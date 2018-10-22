@@ -16,13 +16,13 @@ There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NS
 
 
 ## Options
--h : Help
--l : AutoHotKey version L
--b : AutoHotKey version B
--A : AutoIt Simple Way ( +AutoHK )
--a : AutoIt Another Way ( +AutoHK )
--i : InnoSetup
--n : NSIS
+- -h : Help
+- -l : AutoHotKey version L
+- -b : AutoHotKey version B
+- -A : AutoIt Simple Way ( +AutoHK )
+- -a : AutoIt Another Way ( +AutoHK )
+- -i : InnoSetup
+- -n : NSIS
 
 
 ## TODO
