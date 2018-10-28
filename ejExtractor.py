@@ -21,6 +21,7 @@ def help():
 	print "-a : AutoIt Another Way"
 	print "-i : InnoSetup"
 	print "-n : NSIS"
+	print "-m : MSI"
 	return
 
   
@@ -35,7 +36,7 @@ def find_nth(s, x, n, i = 0):
 def main():
 	print res
 	try:
-		opts, args = getopt.getopt(sys.argv[1:],"lbaAinh:o:",["input=","output=","help"])
+		opts, args = getopt.getopt(sys.argv[1:],"lbaAinmh:o:",["input=","output=","help"])
 	except getopt.GetoptError as err:
 		print str(err)
 		sys.exit(1)
@@ -44,7 +45,7 @@ def main():
 		help()
  
 	for opt,arg in opts:
-		if (opt == "-l"):
+		if ( opt == "-l" ):
 		# autohotkey_L
 			f=sys.argv[2]
 			resFile = res + "\\result.txt"
@@ -58,7 +59,7 @@ def main():
 			q=open(resFile,'wb')
 			q.write(f)
 			q.close()
-		elif ( opt == "-b"):
+		elif ( opt == "-b" ):
 		# autohotkey_B
 			os.chdir('AutoHK')
 			autohkDir = os.getcwd()
@@ -71,7 +72,7 @@ def main():
 			os.system(command)
 			os.remove(itsTemp)
 			os.remove(itsTemp2)
-		elif ( opt == "-a"):
+		elif ( opt == "-a" ):
 		# AutoIt
 			os.chdir('AutoIt')
 			autoitDir = os.getcwd()
@@ -122,7 +123,7 @@ def main():
 			shutil.copy(dumbbackFile, dumbFile)
 		elif ( opt == "-A"):
 		# AutoIt Just
-			os.chdir('AutoIt')
+			os.chdir('AutoIt' )
 			autoitDir = os.getcwd()
 			inputFile = sys.argv[2]
 			exe2autFile = autoitDir + "\\Exe2Aut.exe"
@@ -134,7 +135,7 @@ def main():
 			os.system(command)
 			os.remove(itsTemp)
 			os.remove(itsTemp2)
-		elif ( opt == "-i"):
+		elif ( opt == "-i" ):
 		# InnoSetup
 			os.chdir('InnoSetup')
 			innoDir = os.getcwd()
@@ -142,7 +143,7 @@ def main():
 			command = innoFile + " -x " + sys.argv[2]
 			os.chdir(res)
 			os.system(command)
-		elif ( opt == "-n"):
+		elif ( opt == "-n" ):
 		# NSIS
 			os.chdir('NSIS')
 			nsisDir = os.getcwd()
@@ -150,6 +151,16 @@ def main():
 			command = nsisFile + " e " + sys.argv[2]
 			os.chdir(res)
 			os.system(command)
+		elif ( opt == "-m" ):
+		# MSI
+			os.chdir('MSI')
+			msiDir = os.getcwd()
+			msiFile = msiDir + "\\jsMSIx.exe"
+			msiTemp = res + "\\temp.msi"
+			shutil.copy(sys.argv[2], msiTemp)
+			command = msiFile + " " + msiTemp
+			os.system(command)
+			os.remove(msiTemp)
 		elif ( opt == "-h"):
 			help()
  
