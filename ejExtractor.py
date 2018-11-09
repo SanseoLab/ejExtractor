@@ -130,7 +130,7 @@ def main():
 			itsTemp = res + "\\Exe2Aut.exe"
 			itsTemp2 = res + "\\dumb.exe"
 			shutil.copy(exe2autFile, itsTemp)
-			shutil.copy(sys.arg[2], itsTemp2)
+			shutil.copy(sys.argv[2], itsTemp2)
 			command = itsTemp + " -nogui -quiet " + itsTemp2
 			os.system(command)
 			os.remove(itsTemp)
