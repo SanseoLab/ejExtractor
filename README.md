@@ -16,7 +16,9 @@ There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NS
 ## Usage
 - > ejExtractor.py -[Option] [Path]
 for Secure String of Powershell
+ex) ejExtractor.py -n C:\test.exe
 - > ejExtractor.py -[Option] [Path] -key [key]
+ex) ejExtractor.py -psd C:\test.txt -key 35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50
 
 
 ## Options
@@ -32,8 +34,8 @@ for Secure String of Powershell
 - -pde : Powershell Deflate Encode
 - -pgd : Powershell GZip Decode
 - -pge : Powershell GZip Encode
-- -pse : Powershell Secure String Decode
-- -psd : Powershell Secure String Encode
+- -psd : Powershell Secure String Decode
+- -pse : Powershell Secure String Encode
 
 
 ## TODO
