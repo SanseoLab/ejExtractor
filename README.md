@@ -14,12 +14,12 @@ There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NS
 
 
 ## Usage
-- > ejExtractor.py -[Option] [Path]
+> ejExtractor.py -[Option] [Path]
 - ex)
 > ejExtractor.py -n C:\test.exe
 
 for Secure String of Powershell
-- > ejExtractor.py -[Option] [Path] -key [key]
+> ejExtractor.py -[Option] [Path] -key [key]
 - ex) 
 > ejExtractor.py -psd C:\test.txt -key 35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50
 
