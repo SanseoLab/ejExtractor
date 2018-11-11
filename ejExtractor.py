@@ -168,7 +168,7 @@ def main():
 	# Powershell Deflate Decode
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " DeflateDecode " + pshTemp
@@ -180,7 +180,7 @@ def main():
 	# Powershell Deflate Encode
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " DeflateEncode " + pshTemp
@@ -192,7 +192,7 @@ def main():
 	# Powershell Gzip Decode
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " GzipDecode " + pshTemp
@@ -204,7 +204,7 @@ def main():
 	# Powershell Gzip Encode
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " GzipEncode " + pshTemp
@@ -219,7 +219,7 @@ def main():
 			return
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " SecureDecode " + pshTemp + " " + sys.argv[4]
@@ -234,7 +234,7 @@ def main():
 			return
 		os.chdir('Powershell')
 		pshDir = os.getcwd()
-		pshFile = pshDir + '\\PshDecoder.ps1'
+		pshFile = pshDir + '\\PshCodec.ps1'
 		pshTemp = res + "\\temp.ps1"
 		shutil.copy(sys.argv[2], pshTemp)
 		command = "powershell.exe -executionpolicy bypass " + pshFile + " SecureEncode " + pshTemp + " " + sys.argv[4]
