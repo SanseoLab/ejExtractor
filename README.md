@@ -3,7 +3,7 @@ Integrated tool for extracting scripts and binaries of AutoIt, AutoHotKey, InnoS
 
 
 ## Description
-There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NSIS etc. So i just simply integrated these tools into command line script. I think it can be used to automate some jobs too. (+ powrshell encoding routines)
+There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NSIS etc. So i just simply integrated these tools into command line script. I think it can be used to automate some jobs too. (+ powrshell / jse / vbe decoding routines)
 
 - Autoit : using exe2aut
 - AutoHK : using simple python script for version L and tool [ https://github.com/Kalamity/Exe2AhkPatched ] for version B
@@ -11,6 +11,7 @@ There are a lot of tools for each executables like AutoIt, AutoHK, InnoSetup, NS
 - NSIS : using 7z version 15.05. This version can extract everything include installation script(.NSS).
 - MSI : using jsMSIx.exe. It can extract files with path, and we can check registry configuration too with "MSI Unpack.log" which generated in same folder.
 - Powershell : There are some encoding mechanisms used in malwares like deflate, gzip, secure string. It can decode / encode base64 string which encrypted with these algorithms, So you should make txt file for input with extracted from powershell command lines. If it use secure string, then you also need key and you should add -key option and give a key with command line.
+- JSE / VBE : using vbs scripts. [ https://gallery.technet.microsoft.com/Encode-and-Decode-a-VB-a480d74c ]
 
 
 ## Usage
@@ -39,6 +40,8 @@ for Secure String of Powershell
 - -pge : Powershell GZip Encode
 - -psd : Powershell Secure String Decode
 - -pse : Powershell Secure String Encode
+- -jve : JS / VBS Encoding (to .jse or .vbe). Warn : result extension is alwyas vbe, so just change extension if it's js.
+- -jvd : JSE / VBE Decoding (to .js or .vbs). Warn : result extension is alwyas vbs, so just change extension if it's jse.
 
 
 ## TODO
