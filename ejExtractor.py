@@ -3,19 +3,11 @@ import getopt
 import os
 import shutil
 
-nowDir = os.path.dirname(sys.argv[0])
-os.chdir(nowDir)
-resDir = os.path.dirname(sys.argv[2])
-resNameWith = os.path.basename(sys.argv[2])
-resName = os.path.splitext(resNameWith)[0] + "_"
-res = resDir + "\\" + resName
-os.makedirs(res)
 
 def help():
 	print "USAGE : ejExtractor.py -[Option] [Path]"
 	print "USAGE2 (Powershell Secure String) : ejExtractor.py -[Option] [Path] -key [key]"
 	print "==== Option ===="
-	print "-h : Help"
 	print "-l : AutoHotKey version L"
 	print "-b : AutoHotKey version B"
 	print "-A : AutoIt Simple Way"
@@ -29,6 +21,8 @@ def help():
 	print "-pge : Powershell GZip Encode"
 	print "-pse : Powershell Secure String Decode"
 	print "-psd : Powershell Secure String Encode"
+	print "-jve : JS/VBS Encoding"
+	print "-jvd : JSE/VBE Eecoding"
 	return
 
   
@@ -41,11 +35,21 @@ def find_nth(s, x, n, i = 0):
   
  
 def main():
-
-	opt = sys.argv[1]
 	
-	if len(sys.argv) == 1:
+	if len(sys.argv) <= 2:
 		help()
+		return
+	
+	opt = sys.argv[1]
+
+
+	nowDir = os.path.dirname(sys.argv[0])
+	os.chdir(nowDir)
+	resDir = os.path.dirname(sys.argv[2])
+	resNameWith = os.path.basename(sys.argv[2])
+	resName = os.path.splitext(resNameWith)[0] + "_"
+	res = resDir + "\\" + resName
+	os.makedirs(res)
  
 
 	if ( opt == "-l" ):
@@ -242,8 +246,26 @@ def main():
 		print resDir
 		os.system(command)
 		os.remove(pshTemp)
-	elif ( opt == "-h"):
-		help()
+	elif ( opt == "-jve" ):
+	# JS/VBS Encoding
+		os.chdir('JV')
+		jvDir = os.getcwd()
+		jvFile = jvDir + "\\Encode.vbs"
+		jvTemp = res + "\\temp.vbs"
+		shutil.copy(sys.argv[2], jvTemp)
+		command = jvFile + " " + jvTemp
+		os.system(command)
+		os.remove(jvTemp)
+	elif ( opt == "-jvd" ):
+	# JSE/VBE Decoding
+		os.chdir('JV')
+		jvDir = os.getcwd()
+		jvFile = jvDir + "\\Decode.vbs"
+		jvTemp = res + "\\temp.vbe"
+		shutil.copy(sys.argv[2], jvTemp)
+		command = jvFile + " " + jvTemp
+		os.system(command)
+		os.remove(jvTemp)
  
 
 	return
