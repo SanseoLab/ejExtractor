@@ -1,5 +1,5 @@
 # ejExtractor
-Integrated tool for extracting scripts and binaries of AutoIt, AutoHotKey, InnoSetup, NSIS executables, MSI and powershell Encoding/Decoding.
+Integrated tool for extracting scripts and binaries of AutoIt, AutoHotKey, InnoSetup, NSIS executables, MSI and JSE/VBE, powershell Encoding/Decoding.
 
 
 ## Description
